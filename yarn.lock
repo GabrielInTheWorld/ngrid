@@ -105,7 +105,7 @@
     "@angular-devkit/architect" "0.1302.5"
     rxjs "6.6.7"
 
-"@angular-devkit/core@13.2.5":
+"@angular-devkit/core@13.2.5", "@angular-devkit/core@^13.2.5":
   version "13.2.5"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-13.2.5.tgz#376f3d205a75cd381191ddabfe3c368e0e9a7d82"
   integrity sha512-WuWp/1R0FtCHPBcJLF13lTLHETtDGFUX0ULfGPRaYB5OVCSQcovVp5UbZTTy/Ss3ub3EOEmJlU8kMJfBrWuq+A==
