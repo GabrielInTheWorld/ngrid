@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-bootstrap/pagination",
+  "main": "../bundles/pebula-ngrid-bootstrap-pagination.umd.js",
+  "module": "../fesm2015/pebula-ngrid-bootstrap-pagination.js",
+  "es2015": "../fesm2015/pebula-ngrid-bootstrap-pagination.js",
+  "esm2015": "../esm2015/pagination/pebula-ngrid-bootstrap-pagination.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-bootstrap-pagination.js",
+  "typings": "pebula-ngrid-bootstrap-pagination.d.ts",
+  "sideEffects": false
+}

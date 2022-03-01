@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-material/paginator",
+  "main": "../bundles/pebula-ngrid-material-paginator.umd.js",
+  "module": "../fesm2015/pebula-ngrid-material-paginator.js",
+  "es2015": "../fesm2015/pebula-ngrid-material-paginator.js",
+  "esm2015": "../esm2015/paginator/pebula-ngrid-material-paginator.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-material-paginator.js",
+  "typings": "pebula-ngrid-material-paginator.d.ts",
+  "sideEffects": false
+}

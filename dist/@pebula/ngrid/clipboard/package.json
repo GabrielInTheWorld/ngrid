@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/clipboard",
+  "main": "../bundles/pebula-ngrid-clipboard.umd.js",
+  "module": "../fesm2015/pebula-ngrid-clipboard.js",
+  "es2015": "../fesm2015/pebula-ngrid-clipboard.js",
+  "esm2015": "../esm2015/clipboard/pebula-ngrid-clipboard.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-clipboard.js",
+  "typings": "pebula-ngrid-clipboard.d.ts",
+  "sideEffects": false
+}

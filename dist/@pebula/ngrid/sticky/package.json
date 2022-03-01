@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/sticky",
+  "main": "../bundles/pebula-ngrid-sticky.umd.js",
+  "module": "../fesm2015/pebula-ngrid-sticky.js",
+  "es2015": "../fesm2015/pebula-ngrid-sticky.js",
+  "esm2015": "../esm2015/sticky/pebula-ngrid-sticky.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-sticky.js",
+  "typings": "pebula-ngrid-sticky.d.ts",
+  "sideEffects": false
+}

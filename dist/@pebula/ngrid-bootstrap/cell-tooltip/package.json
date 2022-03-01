@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-bootstrap/cell-tooltip",
+  "main": "../bundles/pebula-ngrid-bootstrap-cell-tooltip.umd.js",
+  "module": "../fesm2015/pebula-ngrid-bootstrap-cell-tooltip.js",
+  "es2015": "../fesm2015/pebula-ngrid-bootstrap-cell-tooltip.js",
+  "esm2015": "../esm2015/cell-tooltip/pebula-ngrid-bootstrap-cell-tooltip.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-bootstrap-cell-tooltip.js",
+  "typings": "pebula-ngrid-bootstrap-cell-tooltip.d.ts",
+  "sideEffects": false
+}

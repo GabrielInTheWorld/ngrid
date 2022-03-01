@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/infinite-scroll",
+  "main": "../bundles/pebula-ngrid-infinite-scroll.umd.js",
+  "module": "../fesm2015/pebula-ngrid-infinite-scroll.js",
+  "es2015": "../fesm2015/pebula-ngrid-infinite-scroll.js",
+  "esm2015": "../esm2015/infinite-scroll/pebula-ngrid-infinite-scroll.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-infinite-scroll.js",
+  "typings": "pebula-ngrid-infinite-scroll.d.ts",
+  "sideEffects": false
+}

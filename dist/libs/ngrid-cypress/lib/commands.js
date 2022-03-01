@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ngrid_harness_1 = require("./ngrid-harness");
+Cypress.Commands.add('nGrid', { prevSubject: 'element' }, (subject, options = {}) => {
+    if (subject.get().length > 1)
+        throw new Error(`Selector "${subject.selector}" returned more than 1 grid instance.`);
+    const nGrid = subject.get()[0];
+    if (nGrid.localName !== 'pbl-ngrid') {
+        throw new Error(`Invalid nGrid element provided, got ${nGrid.tagName} but expected 'pbl-ngrid'`);
+    }
+    return new ngrid_harness_1.NGridCypressHarness(nGrid);
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiY29tbWFuZHMuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi9saWJzL25ncmlkLWN5cHJlc3Mvc3JjL2xpYi9jb21tYW5kcy50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLG1EQUFzRDtBQUV0RCxPQUFPLENBQUMsUUFBUSxDQUFDLEdBQUcsQ0FBQyxPQUFPLEVBQUUsRUFBRSxXQUFXLEVBQUUsU0FBUyxFQUFFLEVBQUUsQ0FBQyxPQUFZLEVBQUUsVUFBZSxFQUFFLEVBQUUsRUFBRTtJQUM1RixJQUFJLE9BQU8sQ0FBQyxHQUFHLEVBQUUsQ0FBQyxNQUFNLEdBQUcsQ0FBQztRQUFFLE1BQU0sSUFBSSxLQUFLLENBQUMsYUFBYSxPQUFPLENBQUMsUUFBUSx1Q0FBdUMsQ0FBQyxDQUFBO0lBRW5ILE1BQU0sS0FBSyxHQUFnQixPQUFPLENBQUMsR0FBRyxFQUFFLENBQUMsQ0FBQyxDQUFDLENBQUM7SUFDNUMsSUFBSSxLQUFLLENBQUMsU0FBUyxLQUFLLFdBQVcsRUFBRTtRQUNuQyxNQUFNLElBQUksS0FBSyxDQUFDLHVDQUF1QyxLQUFLLENBQUMsT0FBTywyQkFBMkIsQ0FBQyxDQUFDO0tBQ2xHO0lBRUQsT0FBTyxJQUFJLG1DQUFtQixDQUFDLEtBQUssQ0FBUSxDQUFDO0FBQy9DLENBQUMsQ0FBQyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgTkdyaWRDeXByZXNzSGFybmVzcyB9IGZyb20gJy4vbmdyaWQtaGFybmVzcyc7XG5cbkN5cHJlc3MuQ29tbWFuZHMuYWRkKCduR3JpZCcsIHsgcHJldlN1YmplY3Q6ICdlbGVtZW50JyB9LCAoc3ViamVjdDogYW55LCBvcHRpb25zOiBhbnkgPSB7fSkgPT4ge1xuICBpZiAoc3ViamVjdC5nZXQoKS5sZW5ndGggPiAxKSB0aHJvdyBuZXcgRXJyb3IoYFNlbGVjdG9yIFwiJHtzdWJqZWN0LnNlbGVjdG9yfVwiIHJldHVybmVkIG1vcmUgdGhhbiAxIGdyaWQgaW5zdGFuY2UuYClcblxuICBjb25zdCBuR3JpZDogSFRNTEVsZW1lbnQgPSBzdWJqZWN0LmdldCgpWzBdO1xuICBpZiAobkdyaWQubG9jYWxOYW1lICE9PSAncGJsLW5ncmlkJykge1xuICAgIHRocm93IG5ldyBFcnJvcihgSW52YWxpZCBuR3JpZCBlbGVtZW50IHByb3ZpZGVkLCBnb3QgJHtuR3JpZC50YWdOYW1lfSBidXQgZXhwZWN0ZWQgJ3BibC1uZ3JpZCdgKTtcbiAgfVxuXG4gIHJldHVybiBuZXcgTkdyaWRDeXByZXNzSGFybmVzcyhuR3JpZCkgYXMgYW55O1xufSk7XG4iXX0=

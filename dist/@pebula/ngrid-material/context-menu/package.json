@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-material/context-menu",
+  "main": "../bundles/pebula-ngrid-material-context-menu.umd.js",
+  "module": "../fesm2015/pebula-ngrid-material-context-menu.js",
+  "es2015": "../fesm2015/pebula-ngrid-material-context-menu.js",
+  "esm2015": "../esm2015/context-menu/pebula-ngrid-material-context-menu.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-material-context-menu.js",
+  "typings": "pebula-ngrid-material-context-menu.d.ts",
+  "sideEffects": false
+}

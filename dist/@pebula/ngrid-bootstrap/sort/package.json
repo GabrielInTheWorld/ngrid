@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-bootstrap/sort",
+  "main": "../bundles/pebula-ngrid-bootstrap-sort.umd.js",
+  "module": "../fesm2015/pebula-ngrid-bootstrap-sort.js",
+  "es2015": "../fesm2015/pebula-ngrid-bootstrap-sort.js",
+  "esm2015": "../esm2015/sort/pebula-ngrid-bootstrap-sort.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-bootstrap-sort.js",
+  "typings": "pebula-ngrid-bootstrap-sort.d.ts",
+  "sideEffects": false
+}

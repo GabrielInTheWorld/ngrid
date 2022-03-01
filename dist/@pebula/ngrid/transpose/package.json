@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/transpose",
+  "main": "../bundles/pebula-ngrid-transpose.umd.js",
+  "module": "../fesm2015/pebula-ngrid-transpose.js",
+  "es2015": "../fesm2015/pebula-ngrid-transpose.js",
+  "esm2015": "../esm2015/transpose/pebula-ngrid-transpose.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-transpose.js",
+  "typings": "pebula-ngrid-transpose.d.ts",
+  "sideEffects": false
+}

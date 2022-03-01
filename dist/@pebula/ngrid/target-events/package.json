@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/target-events",
+  "main": "../bundles/pebula-ngrid-target-events.umd.js",
+  "module": "../fesm2015/pebula-ngrid-target-events.js",
+  "es2015": "../fesm2015/pebula-ngrid-target-events.js",
+  "esm2015": "../esm2015/target-events/pebula-ngrid-target-events.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-target-events.js",
+  "typings": "pebula-ngrid-target-events.d.ts",
+  "sideEffects": false
+}

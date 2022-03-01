@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-material/selection-column",
+  "main": "../bundles/pebula-ngrid-material-selection-column.umd.js",
+  "module": "../fesm2015/pebula-ngrid-material-selection-column.js",
+  "es2015": "../fesm2015/pebula-ngrid-material-selection-column.js",
+  "esm2015": "../esm2015/selection-column/pebula-ngrid-material-selection-column.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-material-selection-column.js",
+  "typings": "pebula-ngrid-material-selection-column.d.ts",
+  "sideEffects": false
+}

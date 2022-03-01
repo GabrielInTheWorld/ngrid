@@ -1,0 +1,18 @@
+{
+  "name": "@pebula/ngrid-material",
+  "version": "4.0.0",
+  "peerDependencies": {
+    "@angular/material": "^12.0.0",
+    "@pebula/ngrid": "4.0.0"
+  },
+  "main": "bundles/pebula-ngrid-material.umd.js",
+  "module": "fesm2015/pebula-ngrid-material.js",
+  "es2015": "fesm2015/pebula-ngrid-material.js",
+  "esm2015": "esm2015/pebula-ngrid-material.js",
+  "fesm2015": "fesm2015/pebula-ngrid-material.js",
+  "typings": "pebula-ngrid-material.d.ts",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^2.1.0"
+  }
+}

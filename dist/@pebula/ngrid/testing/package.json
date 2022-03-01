@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/testing",
+  "main": "../bundles/pebula-ngrid-testing.umd.js",
+  "module": "../fesm2015/pebula-ngrid-testing.js",
+  "es2015": "../fesm2015/pebula-ngrid-testing.js",
+  "esm2015": "../esm2015/testing/pebula-ngrid-testing.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-testing.js",
+  "typings": "pebula-ngrid-testing.d.ts",
+  "sideEffects": false
+}
