@@ -2,7 +2,7 @@
   "name": "@pebula/ngrid-material",
   "version": "4.0.0",
   "peerDependencies": {
-    "@angular/material": "^12.0.0",
+    "@angular/material": ">=12.0.0",
     "@pebula/ngrid": "4.0.0"
   },
   "main": "bundles/pebula-ngrid-material.umd.js",
