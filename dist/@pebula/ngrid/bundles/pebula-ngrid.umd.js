@@ -5307,15 +5307,15 @@
              *
              * > Note that the notification is not immediate, it will occur on the closest micro-task after the change.
              */
-            this.focusChanged = this.focusChanged$
-                .pipe(operators.buffer(this.focusChanged$.pipe(operators.debounceTime(0, rxjs.asapScheduler))), operators.map(function (events) { return ({ prev: events[0].prev, curr: events[events.length - 1].curr }); }));
+            this.focusChanged = this.focusChanged$.pipe(operators.buffer(this.focusChanged$.pipe(operators.debounceTime(0, rxjs.asapScheduler))), operators.map(function (events) { var _a, _b; return ({ prev: (_a = events[0]) === null || _a === void 0 ? void 0 : _a.prev, curr: (_b = events[events.length - 1]) === null || _b === void 0 ? void 0 : _b.curr }); }));
             /**
              * Notify when the selected cells has changed.
              */
             this.selectionChanged = this.selectionChanged$.asObservable();
             this.columnApi = extApi.columnApi;
             extApi.events
-                .pipe(operators.filter(function (e) { return e.kind === 'onDataSource'; }), operators.take(1)).subscribe(function () {
+                .pipe(operators.filter(function (e) { return e.kind === 'onDataSource'; }), operators.take(1))
+                .subscribe(function () {
                 _this.vcRef = extApi.cdkTable._rowOutlet.viewContainer;
                 _this.syncViewAndContext();
                 extApi.cdkTable.onRenderRows.subscribe(function () { return _this.syncViewAndContext(); });
@@ -5358,7 +5358,7 @@
         ContextApi.prototype.focusCell = function (cellRef) {
             if (!cellRef) {
                 if (this.activeFocused) {
-                    var _a = this.activeFocused, rowIdent = _a.rowIdent, colIndex = _a.colIndex;
+                    var _c = this.activeFocused, rowIdent = _c.rowIdent, colIndex = _c.colIndex;
                     this.activeFocused = undefined;
                     this.updateState(rowIdent, colIndex, { focused: false });
                     this.emitFocusChanged(this.activeFocused);
@@ -5395,7 +5395,7 @@
          * Default to false (add to current).
          */
         ContextApi.prototype.selectCells = function (cellRefs, clearCurrent) {
-            var e_1, _a, _b;
+            var e_1, _c, _d;
             var toMarkRendered = new Set();
             if (clearCurrent) {
                 this.unselectCells();
@@ -5417,7 +5417,7 @@
                         }
                     }
                     else if (ref) {
-                        var _c = __read(ref, 2), rowState = _c[0], colIndex = _c[1];
+                        var _e = __read(ref, 2), rowState = _e[0], colIndex = _e[1];
                         if (!rowState.cells[colIndex].selected) {
                             this.updateState(rowState.identity, colIndex, { selected: true });
                             this.activeSelected.push({ rowIdent: rowState.identity, colIndex: colIndex });
@@ -5428,12 +5428,12 @@
             catch (e_1_1) { e_1 = { error: e_1_1 }; }
             finally {
                 try {
-                    if (cellRefs_1_1 && !cellRefs_1_1.done && (_a = cellRefs_1.return)) _a.call(cellRefs_1);
+                    if (cellRefs_1_1 && !cellRefs_1_1.done && (_c = cellRefs_1.return)) _c.call(cellRefs_1);
                 }
                 finally { if (e_1) throw e_1.error; }
             }
             if (toMarkRendered.size > 0) {
-                (_b = this.extApi.grid.rowsApi).syncRows.apply(_b, __spreadArray(['data'], __read(Array.from(toMarkRendered.values()))));
+                (_d = this.extApi.grid.rowsApi).syncRows.apply(_d, __spreadArray(['data'], __read(Array.from(toMarkRendered.values()))));
             }
             this.selectionChanged$.next({ added: added, removed: [] });
         };
@@ -5443,7 +5443,7 @@
          * @param cellRef A Reference to the cell
          */
         ContextApi.prototype.unselectCells = function (cellRefs) {
-            var e_2, _a, _b;
+            var e_2, _c, _d;
             var toMarkRendered = new Set();
             var toUnselect = this.activeSelected;
             var removeAll = true;
@@ -5472,7 +5472,7 @@
                     }
                 }
                 else if (ref) {
-                    var _c = __read(ref, 2), rowState_1 = _c[0], colIndex_2 = _c[1];
+                    var _e = __read(ref, 2), rowState_1 = _e[0], colIndex_2 = _e[1];
                     if (rowState_1.cells[colIndex_2].selected) {
                         this_1.updateState(rowState_1.identity, colIndex_2, { selected: false });
                         if (!removeAll) {
@@ -5494,12 +5494,12 @@
             catch (e_2_1) { e_2 = { error: e_2_1 }; }
             finally {
                 try {
-                    if (toUnselect_1_1 && !toUnselect_1_1.done && (_a = toUnselect_1.return)) _a.call(toUnselect_1);
+                    if (toUnselect_1_1 && !toUnselect_1_1.done && (_c = toUnselect_1.return)) _c.call(toUnselect_1);
                 }
                 finally { if (e_2) throw e_2.error; }
             }
             if (toMarkRendered.size > 0) {
-                (_b = this.extApi.grid.rowsApi).syncRows.apply(_b, __spreadArray(['data'], __read(Array.from(toMarkRendered.values()))));
+                (_d = this.extApi.grid.rowsApi).syncRows.apply(_d, __spreadArray(['data'], __read(Array.from(toMarkRendered.values()))));
             }
             this.selectionChanged$.next({ added: [], removed: removed });
         };
@@ -5510,14 +5510,14 @@
          * The view and context are synced every time rows are rendered so make sure you set this to true only when you know there is no rendering call coming down the pipe.
          */
         ContextApi.prototype.clear = function (syncView) {
-            var e_3, _a;
+            var e_3, _c;
             this.viewCache.clear();
             this.viewCacheGhost.clear();
             this.cache.clear();
             if (syncView === true) {
                 try {
-                    for (var _b = __values(this.extApi.rowsApi.dataRows()), _c = _b.next(); !_c.done; _c = _b.next()) {
-                        var r = _c.value;
+                    for (var _d = __values(this.extApi.rowsApi.dataRows()), _e = _d.next(); !_e.done; _e = _d.next()) {
+                        var r = _e.value;
                         this.viewCache.set(r.rowIndex, r.context);
                         // we're clearing the existing view state on the component
                         // If in the future we want to update state and not clear, remove this one
@@ -5530,7 +5530,7 @@
                 catch (e_3_1) { e_3 = { error: e_3_1 }; }
                 finally {
                     try {
-                        if (_c && !_c.done && (_a = _b.return)) _a.call(_b);
+                        if (_e && !_e.done && (_c = _d.return)) _c.call(_d);
                     }
                     finally { if (e_3) throw e_3.error; }
                 }
@@ -5673,7 +5673,7 @@
         ContextApi.prototype.emitFocusChanged = function (curr) {
             this.focusChanged$.next({
                 prev: this.focusChanged$.value.curr,
-                curr: curr,
+                curr: curr
             });
         };
         ContextApi.prototype.destroy = function () {
@@ -5687,7 +5687,9 @@
                     _this.cache.get(ident).firstRender = false;
                 }
             });
-            this.viewCacheGhost = new Set(Array.from(this.viewCache.values()).filter(function (v) { return v.firstRender; }).map(function (v) { return v.identity; }));
+            this.viewCacheGhost = new Set(Array.from(this.viewCache.values())
+                .filter(function (v) { return v.firstRender; })
+                .map(function (v) { return v.identity; }));
         };
         return ContextApi;
     }());

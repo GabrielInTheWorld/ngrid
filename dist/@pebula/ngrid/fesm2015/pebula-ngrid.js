@@ -3939,20 +3939,20 @@ class ContextApi {
          *
          * > Note that the notification is not immediate, it will occur on the closest micro-task after the change.
          */
-        this.focusChanged = this.focusChanged$
-            .pipe(buffer(this.focusChanged$.pipe(debounceTime(0, asapScheduler))), map(events => ({ prev: events[0].prev, curr: events[events.length - 1].curr })));
+        this.focusChanged = this.focusChanged$.pipe(buffer(this.focusChanged$.pipe(debounceTime(0, asapScheduler))), map((events) => { var _a, _b; return ({ prev: (_a = events[0]) === null || _a === void 0 ? void 0 : _a.prev, curr: (_b = events[events.length - 1]) === null || _b === void 0 ? void 0 : _b.curr }); }));
         /**
          * Notify when the selected cells has changed.
          */
         this.selectionChanged = this.selectionChanged$.asObservable();
         this.columnApi = extApi.columnApi;
         extApi.events
-            .pipe(filter(e => e.kind === 'onDataSource'), take(1)).subscribe(() => {
+            .pipe(filter((e) => e.kind === 'onDataSource'), take(1))
+            .subscribe(() => {
             this.vcRef = extApi.cdkTable._rowOutlet.viewContainer;
             this.syncViewAndContext();
             extApi.cdkTable.onRenderRows.subscribe(() => this.syncViewAndContext());
         });
-        extApi.events.pipe(ON_DESTROY).subscribe(e => this.destroy());
+        extApi.events.pipe(ON_DESTROY).subscribe((e) => this.destroy());
     }
     /**
      * The reference to currently focused cell context.
@@ -4075,7 +4075,7 @@ class ContextApi {
                     const colIndex = ref.index;
                     this.updateState(rowIdent, colIndex, { selected: false });
                     if (!removeAll) {
-                        const wasRemoved = removeFromArray(this.activeSelected, item => item.colIndex === colIndex && item.rowIdent === rowIdent);
+                        const wasRemoved = removeFromArray(this.activeSelected, (item) => item.colIndex === colIndex && item.rowIdent === rowIdent);
                         if (wasRemoved) {
                             removed.push({ rowIdent, colIndex });
                         }
@@ -4088,7 +4088,7 @@ class ContextApi {
                 if (rowState.cells[colIndex].selected) {
                     this.updateState(rowState.identity, colIndex, { selected: false });
                     if (!removeAll) {
-                        const wasRemoved = removeFromArray(this.activeSelected, item => item.colIndex === colIndex && item.rowIdent === rowState.identity);
+                        const wasRemoved = removeFromArray(this.activeSelected, (item) => item.colIndex === colIndex && item.rowIdent === rowState.identity);
                         if (wasRemoved) {
                             removed.push({ rowIdent: rowState.identity, colIndex });
                         }
@@ -4260,7 +4260,7 @@ class ContextApi {
     emitFocusChanged(curr) {
         this.focusChanged$.next({
             prev: this.focusChanged$.value.curr,
-            curr,
+            curr
         });
     }
     destroy() {
@@ -4268,12 +4268,14 @@ class ContextApi {
         this.selectionChanged$.complete();
     }
     syncViewAndContext() {
-        this.viewCacheGhost.forEach(ident => {
+        this.viewCacheGhost.forEach((ident) => {
             if (!this.findRowInView(ident)) {
                 this.cache.get(ident).firstRender = false;
             }
         });
-        this.viewCacheGhost = new Set(Array.from(this.viewCache.values()).filter(v => v.firstRender).map(v => v.identity));
+        this.viewCacheGhost = new Set(Array.from(this.viewCache.values())
+            .filter((v) => v.firstRender)
+            .map((v) => v.identity));
     }
 }
 

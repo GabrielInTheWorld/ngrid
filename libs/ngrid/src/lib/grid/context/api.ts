@@ -37,11 +37,10 @@ export class ContextApi<T = any> {
    *
    * > Note that the notification is not immediate, it will occur on the closest micro-task after the change.
    */
-  readonly focusChanged: Observable<PblNgridFocusChangedEvent> = this.focusChanged$
-    .pipe(
-      buffer<PblNgridFocusChangedEvent>(this.focusChanged$.pipe(debounceTime(0, asapScheduler))),
-      map( events => ({ prev: events[0].prev, curr: events[events.length - 1].curr }) )
-    );
+  readonly focusChanged: Observable<PblNgridFocusChangedEvent> = this.focusChanged$.pipe(
+    buffer<PblNgridFocusChangedEvent>(this.focusChanged$.pipe(debounceTime(0, asapScheduler))),
+    map((events) => ({ prev: events[0]?.prev, curr: events[events.length - 1]?.curr }))
+  );
 
   /**
    * Notify when the selected cells has changed.
@@ -56,7 +55,7 @@ export class ContextApi<T = any> {
    * If this is the case `findRowInView` will return undefined, use `findRowInCache` instead.
    */
   get focusedCell(): GridDataPoint | undefined {
-    return this.activeFocused ? {...this.activeFocused } : undefined;
+    return this.activeFocused ? { ...this.activeFocused } : undefined;
   }
 
   /**
@@ -74,15 +73,16 @@ export class ContextApi<T = any> {
     this.columnApi = extApi.columnApi;
     extApi.events
       .pipe(
-        filter( e => e.kind === 'onDataSource'),
-        take(1),
-      ).subscribe(() => {
+        filter((e) => e.kind === 'onDataSource'),
+        take(1)
+      )
+      .subscribe(() => {
         this.vcRef = extApi.cdkTable._rowOutlet.viewContainer;
         this.syncViewAndContext();
         extApi.cdkTable.onRenderRows.subscribe(() => this.syncViewAndContext());
       });
 
-    extApi.events.pipe(ON_DESTROY).subscribe( e => this.destroy() );
+    extApi.events.pipe(ON_DESTROY).subscribe((e) => this.destroy());
   }
 
   /**
@@ -112,7 +112,7 @@ export class ContextApi<T = any> {
 
             this.activeFocused = { rowIdent: ref.rowContext.identity, colIndex: ref.index };
 
-            this.selectCells( [ this.activeFocused ], true);
+            this.selectCells([this.activeFocused], true);
 
             this.extApi.grid.rowsApi.syncRows('data', ref.rowContext.index);
           }
@@ -144,7 +144,7 @@ export class ContextApi<T = any> {
       const ref = resolveCellReference(cellRef, this as any);
       if (ref instanceof PblCellContext) {
         if (!ref.selected && !this.extApi.grid.viewport.isScrolling) {
-          const rowIdent = ref.rowContext.identity
+          const rowIdent = ref.rowContext.identity;
           const colIndex = ref.index;
           this.updateState(rowIdent, colIndex, { selected: true });
 
@@ -155,10 +155,10 @@ export class ContextApi<T = any> {
           toMarkRendered.add(ref.rowContext.index);
         }
       } else if (ref) {
-        const [ rowState, colIndex ] = ref;
+        const [rowState, colIndex] = ref;
         if (!rowState.cells[colIndex].selected) {
           this.updateState(rowState.identity, colIndex, { selected: true });
-          this.activeSelected.push( { rowIdent: rowState.identity, colIndex } );
+          this.activeSelected.push({ rowIdent: rowState.identity, colIndex });
         }
       }
     }
@@ -180,7 +180,7 @@ export class ContextApi<T = any> {
     let toUnselect: CellReference[] = this.activeSelected;
     let removeAll = true;
 
-    if(Array.isArray(cellRefs)) {
+    if (Array.isArray(cellRefs)) {
       toUnselect = cellRefs;
       removeAll = false;
     } else {
@@ -193,25 +193,31 @@ export class ContextApi<T = any> {
       const ref = resolveCellReference(cellRef, this as any);
       if (ref instanceof PblCellContext) {
         if (ref.selected) {
-          const rowIdent = ref.rowContext.identity
+          const rowIdent = ref.rowContext.identity;
           const colIndex = ref.index;
           this.updateState(rowIdent, colIndex, { selected: false });
           if (!removeAll) {
-            const wasRemoved = removeFromArray(this.activeSelected, item => item.colIndex === colIndex && item.rowIdent === rowIdent);
+            const wasRemoved = removeFromArray(
+              this.activeSelected,
+              (item) => item.colIndex === colIndex && item.rowIdent === rowIdent
+            );
             if (wasRemoved) {
-              removed.push({ rowIdent, colIndex })
+              removed.push({ rowIdent, colIndex });
             }
           }
           toMarkRendered.add(ref.rowContext.index);
         }
       } else if (ref) {
-        const [ rowState, colIndex ] = ref;
+        const [rowState, colIndex] = ref;
         if (rowState.cells[colIndex].selected) {
           this.updateState(rowState.identity, colIndex, { selected: false });
           if (!removeAll) {
-            const wasRemoved = removeFromArray(this.activeSelected, item => item.colIndex === colIndex && item.rowIdent === rowState.identity);
+            const wasRemoved = removeFromArray(
+              this.activeSelected,
+              (item) => item.colIndex === colIndex && item.rowIdent === rowState.identity
+            );
             if (wasRemoved) {
-              removed.push({ rowIdent: rowState.identity, colIndex })
+              removed.push({ rowIdent: rowState.identity, colIndex });
             }
           }
         }
@@ -259,7 +265,7 @@ export class ContextApi<T = any> {
     return this.rowContext(index);
   }
 
-  getCell(cell: HTMLElement | GridDataPoint): PblNgridCellContext | undefined
+  getCell(cell: HTMLElement | GridDataPoint): PblNgridCellContext | undefined;
   /**
    * Return the cell context for the cell at the point specified
    * @param row
@@ -303,7 +309,11 @@ export class ContextApi<T = any> {
 
   updateState(rowIdentity: any, columnIndex: number, cellState: Partial<CellContextState<T>>): void;
   updateState(rowIdentity: any, rowState: Partial<RowContextState<T>>): void;
-  updateState(rowIdentity: any, rowStateOrCellIndex: Partial<RowContextState<T>> | number, cellState?: Partial<CellContextState<T>>): void {
+  updateState(
+    rowIdentity: any,
+    rowStateOrCellIndex: Partial<RowContextState<T>> | number,
+    cellState?: Partial<CellContextState<T>>
+  ): void {
     const currentRowState = this.cache.get(rowIdentity);
     if (currentRowState) {
       if (typeof rowStateOrCellIndex === 'number') {
@@ -400,7 +410,7 @@ export class ContextApi<T = any> {
       rowContext.dsIndex = dsIndex;
       rowContext.identity = identity;
       rowContext.fromState(this.getCreateState(rowContext));
-      this.addToViewCache(renderRowIndex, rowContext)
+      this.addToViewCache(renderRowIndex, rowContext);
     }
   }
 
@@ -421,7 +431,7 @@ export class ContextApi<T = any> {
   private emitFocusChanged(curr: PblNgridFocusChangedEvent['curr']): void {
     this.focusChanged$.next({
       prev: this.focusChanged$.value.curr,
-      curr,
+      curr
     });
   }
 
@@ -431,12 +441,15 @@ export class ContextApi<T = any> {
   }
 
   private syncViewAndContext() {
-    this.viewCacheGhost.forEach( ident => {
+    this.viewCacheGhost.forEach((ident) => {
       if (!this.findRowInView(ident)) {
-        this.cache.get(ident).firstRender = false
+        this.cache.get(ident).firstRender = false;
       }
     });
-    this.viewCacheGhost = new Set(Array.from(this.viewCache.values()).filter( v => v.firstRender ).map( v => v.identity ));
+    this.viewCacheGhost = new Set(
+      Array.from(this.viewCache.values())
+        .filter((v) => v.firstRender)
+        .map((v) => v.identity)
+    );
   }
 }
-
