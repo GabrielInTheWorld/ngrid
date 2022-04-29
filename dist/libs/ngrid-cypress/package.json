@@ -1,0 +1,26 @@
+{
+  "name": "@pebula/ngrid-cypress",
+  "version": "3.0.0",
+  "license": "MIT",
+  "description": "Cypress Test Helpers For @pebula/ngrid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shlomiassaf/ngrid.git"
+  },
+  "keywords": [
+    "ngrid",
+    "cypress",
+    "testing",
+    "e2e",
+    "angular",
+    "grid",
+    "table"
+  ],
+  "author": "Shlomi Assaf",
+  "homepage": "https://github.com/shlomiassaf/ngrid",
+  "bugs": {
+    "url": "https://github.com/shlomiassaf/ngrid/issues"
+  },
+  "main": "index.js",
+  "typings": "index.d.ts"
+}

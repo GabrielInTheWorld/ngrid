@@ -1,0 +1,25 @@
+import { Component, ViewEncapsulation } from '@angular/core';
+import * as i0 from "@angular/core";
+import * as i1 from "../infinite-virtual-row/row";
+import * as i2 from "../infinite-virtual-row/directives";
+/**
+ * Use to set the a default `pblNgridInfiniteVirtualRowDef` if the user did not set one.
+ */
+export class PblNgridDefaultInfiniteVirtualRowComponent {
+    createCell(column) {
+    }
+    destroyCell(column) {
+    }
+}
+/** @nocollapse */ PblNgridDefaultInfiniteVirtualRowComponent.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "12.0.0", ngImport: i0, type: PblNgridDefaultInfiniteVirtualRowComponent, deps: [], target: i0.ɵɵFactoryTarget.Component });
+/** @nocollapse */ PblNgridDefaultInfiniteVirtualRowComponent.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "12.0.0", version: "12.0.0", type: PblNgridDefaultInfiniteVirtualRowComponent, selector: "pbl-ngrid-default-infinite-virtual-row", ngImport: i0, template: "<pbl-ngrid-row in *pblNgridInfiniteVirtualRowDef=\"let row;\" class=\"pbl-ngrid-infinite-virtual-row\" infiniteRow>\n  ...Loading\n</pbl-ngrid-row>\n", styles: [".pbl-ngrid-infinite-virtual-row .pbl-ngrid-cell{position:relative}.pbl-ngrid-infinite-virtual-row .pbl-ngrid-cell:before{position:absolute;top:12px;left:12px;right:12px;bottom:12px;content:\" \";-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-fill-mode:forwards;animation-fill-mode:forwards;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-name:placeload;animation-name:placeload;-webkit-animation-timing-function:ease;animation-timing-function:ease;background:#f6f7f8;background:#eee;background:linear-gradient(90deg,#eee 8%,#ddd 18%,#eee 33%);background-size:200px 100%;border-radius:4px}@-webkit-keyframes placeload{0%{background-position:-200px 0}to{background-position:200px 0}}@keyframes placeload{0%{background-position:-200px 0}to{background-position:200px 0}}"], components: [{ type: i1.PblNgridInfiniteRowComponent, selector: "pbl-ngrid-row[infiniteRow]", exportAs: ["pblNgridInfiniteRow"] }], directives: [{ type: i2.PblNgridInfiniteVirtualRowRefDirective, selector: "[pblNgridInfiniteVirtualRowDef]", inputs: ["pblNgridInfiniteVirtualRowDefColumns", "pblNgridInfiniteVirtualRowDefWhen"] }], encapsulation: i0.ViewEncapsulation.None });
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "12.0.0", ngImport: i0, type: PblNgridDefaultInfiniteVirtualRowComponent, decorators: [{
+            type: Component,
+            args: [{
+                    selector: 'pbl-ngrid-default-infinite-virtual-row',
+                    templateUrl: './default-infinite-virtual-row.component.html',
+                    styleUrls: ['./default-infinite-virtual-row.component.scss'],
+                    encapsulation: ViewEncapsulation.None,
+                }]
+        }] });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZGVmYXVsdC1pbmZpbml0ZS12aXJ0dWFsLXJvdy5jb21wb25lbnQuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi8uLi9saWJzL25ncmlkL2luZmluaXRlLXNjcm9sbC9zcmMvbGliL2RlZmF1bHQtaW5maW5pdGUtdmlydHVhbC1yb3cvZGVmYXVsdC1pbmZpbml0ZS12aXJ0dWFsLXJvdy5jb21wb25lbnQudHMiLCIuLi8uLi8uLi8uLi8uLi8uLi8uLi9saWJzL25ncmlkL2luZmluaXRlLXNjcm9sbC9zcmMvbGliL2RlZmF1bHQtaW5maW5pdGUtdmlydHVhbC1yb3cvZGVmYXVsdC1pbmZpbml0ZS12aXJ0dWFsLXJvdy5jb21wb25lbnQuaHRtbCJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEVBQUUsU0FBUyxFQUFFLGlCQUFpQixFQUFFLE1BQU0sZUFBZSxDQUFDOzs7O0FBRzdEOztHQUVHO0FBT0gsTUFBTSxPQUFPLDBDQUEwQztJQUMzQyxVQUFVLENBQUMsTUFBaUI7SUFDdEMsQ0FBQztJQUVTLFdBQVcsQ0FBQyxNQUFpQjtJQUN2QyxDQUFDOzswSkFMVSwwQ0FBMEM7OElBQTFDLDBDQUEwQyw4RUNadkQsdUpBR0E7MkZEU2EsMENBQTBDO2tCQU50RCxTQUFTO21CQUFDO29CQUNULFFBQVEsRUFBRSx3Q0FBd0M7b0JBQ2xELFdBQVcsRUFBRSwrQ0FBK0M7b0JBQzVELFNBQVMsRUFBRSxDQUFDLCtDQUErQyxDQUFDO29CQUM1RCxhQUFhLEVBQUUsaUJBQWlCLENBQUMsSUFBSTtpQkFDdEMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIFZpZXdFbmNhcHN1bGF0aW9uIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBQYmxDb2x1bW4gfSBmcm9tICdAcGVidWxhL25ncmlkJztcblxuLyoqXG4gKiBVc2UgdG8gc2V0IHRoZSBhIGRlZmF1bHQgYHBibE5ncmlkSW5maW5pdGVWaXJ0dWFsUm93RGVmYCBpZiB0aGUgdXNlciBkaWQgbm90IHNldCBvbmUuXG4gKi9cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ3BibC1uZ3JpZC1kZWZhdWx0LWluZmluaXRlLXZpcnR1YWwtcm93JyxcbiAgdGVtcGxhdGVVcmw6ICcuL2RlZmF1bHQtaW5maW5pdGUtdmlydHVhbC1yb3cuY29tcG9uZW50Lmh0bWwnLFxuICBzdHlsZVVybHM6IFsnLi9kZWZhdWx0LWluZmluaXRlLXZpcnR1YWwtcm93LmNvbXBvbmVudC5zY3NzJ10sXG4gIGVuY2Fwc3VsYXRpb246IFZpZXdFbmNhcHN1bGF0aW9uLk5vbmUsXG59KVxuZXhwb3J0IGNsYXNzIFBibE5ncmlkRGVmYXVsdEluZmluaXRlVmlydHVhbFJvd0NvbXBvbmVudCB7XG4gIHByb3RlY3RlZCBjcmVhdGVDZWxsKGNvbHVtbjogUGJsQ29sdW1uKSB7XG4gIH1cblxuICBwcm90ZWN0ZWQgZGVzdHJveUNlbGwoY29sdW1uOiBQYmxDb2x1bW4pIHtcbiAgfVxufVxuIiwiPHBibC1uZ3JpZC1yb3cgaW4gKnBibE5ncmlkSW5maW5pdGVWaXJ0dWFsUm93RGVmPVwibGV0IHJvdztcIiBjbGFzcz1cInBibC1uZ3JpZC1pbmZpbml0ZS12aXJ0dWFsLXJvd1wiIGluZmluaXRlUm93PlxuICAuLi5Mb2FkaW5nXG48L3BibC1uZ3JpZC1yb3c+XG4iXX0=

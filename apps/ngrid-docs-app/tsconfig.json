@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": [
+      "node",
+      "jest",
+      "dev-mode-types"
+    ]
+  },
+  "angularCompilerOptions": {
+    "strictTemplates": true
+  },
+  "references": [
+    {
+      "path": "./tsconfig.spec.jest.json"
+    },
+    {
+      "path": "./tsconfig.spec.karma.json"
+    }
+  ]
+}

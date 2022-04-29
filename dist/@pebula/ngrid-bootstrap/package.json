@@ -1,0 +1,18 @@
+{
+  "name": "@pebula/ngrid-bootstrap",
+  "version": "4.0.0",
+  "peerDependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@pebula/ngrid": "4.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/pebula-ngrid-bootstrap.umd.js",
+  "module": "fesm2015/pebula-ngrid-bootstrap.js",
+  "es2015": "fesm2015/pebula-ngrid-bootstrap.js",
+  "esm2015": "esm2015/pebula-ngrid-bootstrap.js",
+  "fesm2015": "fesm2015/pebula-ngrid-bootstrap.js",
+  "typings": "pebula-ngrid-bootstrap.d.ts",
+  "sideEffects": false
+}

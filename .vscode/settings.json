@@ -1,0 +1,34 @@
+{
+  "markdownlint.config": {
+    "MD013": false,
+    "MD033": false
+  },
+  "cSpell.words": [
+    "Averager",
+    "COMPARATORS",
+    "Chainable",
+    "Directionality",
+    "Draggables",
+    "Injectable",
+    "Packagr",
+    "angulartics",
+    "cacheable",
+    "coeff",
+    "deserialize",
+    "deserializing",
+    "focusable",
+    "lunr",
+    "mdast",
+    "pebula",
+    "quickthrough",
+    "sortables"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "explorer.compactFolders": false,
+  "debug.javascript.autoAttachFilter": "always",
+  "debug.javascript.terminalOptions": {
+    "autoAttachChildProcesses": true,
+    "nodeVersionHint": 14
+  },
+  "angular.log": "verbose"
+}

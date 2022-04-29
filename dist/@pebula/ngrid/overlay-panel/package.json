@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/overlay-panel",
+  "main": "../bundles/pebula-ngrid-overlay-panel.umd.js",
+  "module": "../fesm2015/pebula-ngrid-overlay-panel.js",
+  "es2015": "../fesm2015/pebula-ngrid-overlay-panel.js",
+  "esm2015": "../esm2015/overlay-panel/pebula-ngrid-overlay-panel.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-overlay-panel.js",
+  "typings": "pebula-ngrid-overlay-panel.d.ts",
+  "sideEffects": false
+}

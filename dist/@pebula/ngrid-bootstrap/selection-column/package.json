@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid-bootstrap/selection-column",
+  "main": "../bundles/pebula-ngrid-bootstrap-selection-column.umd.js",
+  "module": "../fesm2015/pebula-ngrid-bootstrap-selection-column.js",
+  "es2015": "../fesm2015/pebula-ngrid-bootstrap-selection-column.js",
+  "esm2015": "../esm2015/selection-column/pebula-ngrid-bootstrap-selection-column.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-bootstrap-selection-column.js",
+  "typings": "pebula-ngrid-bootstrap-selection-column.d.ts",
+  "sideEffects": false
+}

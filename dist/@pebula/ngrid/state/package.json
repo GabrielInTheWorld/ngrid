@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/state",
+  "main": "../bundles/pebula-ngrid-state.umd.js",
+  "module": "../fesm2015/pebula-ngrid-state.js",
+  "es2015": "../fesm2015/pebula-ngrid-state.js",
+  "esm2015": "../esm2015/state/pebula-ngrid-state.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-state.js",
+  "typings": "pebula-ngrid-state.d.ts",
+  "sideEffects": false
+}

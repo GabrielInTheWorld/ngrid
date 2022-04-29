@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/core",
+  "main": "../bundles/pebula-ngrid-core.umd.js",
+  "module": "../fesm2015/pebula-ngrid-core.js",
+  "es2015": "../fesm2015/pebula-ngrid-core.js",
+  "esm2015": "../esm2015/core/pebula-ngrid-core.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-core.js",
+  "typings": "pebula-ngrid-core.d.ts",
+  "sideEffects": false
+}

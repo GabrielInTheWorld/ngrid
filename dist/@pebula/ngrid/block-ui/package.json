@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/block-ui",
+  "main": "../bundles/pebula-ngrid-block-ui.umd.js",
+  "module": "../fesm2015/pebula-ngrid-block-ui.js",
+  "es2015": "../fesm2015/pebula-ngrid-block-ui.js",
+  "esm2015": "../esm2015/block-ui/pebula-ngrid-block-ui.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-block-ui.js",
+  "typings": "pebula-ngrid-block-ui.d.ts",
+  "sideEffects": false
+}

@@ -1,0 +1,17 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc"
+  },
+  "exclude": [
+    "src/__test-runners/*.ts",
+    "**/*.spec.ts",
+    "./build/**/*.ts",
+    "src/app/app.browser.module.ts",
+    "src/main.ts",
+    "../libs/docs-app-lib/**/*.worker.ts"
+  ],
+  "angularCompilerOptions": {
+    "entryModule": "./src/app/app.server.module#AppServerModule"
+  }
+}
