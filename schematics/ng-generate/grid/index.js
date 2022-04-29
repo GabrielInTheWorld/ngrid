@@ -1,0 +1,36 @@
+"use strict";
+/**
+ * @license
+ * Copyright Google LLC All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://angular.io/license
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const schematics_1 = require("@angular-devkit/schematics");
+const schematics_2 = require("@angular/cdk/schematics");
+/**
+ * Scaffolds a new table component.
+ * Internally it bootstraps the base component schematic
+ */
+function default_1(options) {
+    return schematics_1.chain([
+        schematics_2.buildComponent(Object.assign({}, options), {
+            template: './__path__/__name@dasherize@if-flat__/__name@dasherize__.component.html.template',
+            stylesheet: './__path__/__name@dasherize@if-flat__/__name@dasherize__.component.__style__.template'
+        }),
+        options.skipImport ? schematics_1.noop() : addTableModulesToModule(options)
+    ]);
+}
+exports.default = default_1;
+/**
+ * Adds the required modules to the relative module.
+ */
+function addTableModulesToModule(options) {
+    return (host) => tslib_1.__awaiter(this, void 0, void 0, function* () {
+        const modulePath = (yield schematics_2.findModuleFromOptions(host, options));
+        schematics_2.addModuleImportToModule(host, modulePath, 'PblNgridModule', '@pebula/ngrid');
+    });
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi8uLi8uLi8uLi9saWJzL25ncmlkL3NjaGVtYXRpY3MvbmctZ2VuZXJhdGUvZ3JpZC9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUE7Ozs7OztHQU1HOzs7QUFFSCwyREFBcUU7QUFDckUsd0RBQXlHO0FBR3pHOzs7R0FHRztBQUNILG1CQUF3QixPQUFlO0lBQ3JDLE9BQU8sa0JBQUssQ0FBQztRQUNYLDJCQUFjLG1CQUFLLE9BQU8sR0FBRztZQUMzQixRQUFRLEVBQUUsa0ZBQWtGO1lBQzVGLFVBQVUsRUFDTix1RkFBdUY7U0FDNUYsQ0FBQztRQUNGLE9BQU8sQ0FBQyxVQUFVLENBQUMsQ0FBQyxDQUFDLGlCQUFJLEVBQUUsQ0FBQyxDQUFDLENBQUMsdUJBQXVCLENBQUMsT0FBTyxDQUFDO0tBQy9ELENBQUMsQ0FBQztBQUNMLENBQUM7QUFURCw0QkFTQztBQUVEOztHQUVHO0FBQ0gsU0FBUyx1QkFBdUIsQ0FBQyxPQUFlO0lBQzlDLE9BQU8sQ0FBTyxJQUFVLEVBQUUsRUFBRTtRQUMxQixNQUFNLFVBQVUsR0FBRyxDQUFDLE1BQU0sa0NBQXFCLENBQUMsSUFBSSxFQUFFLE9BQU8sQ0FBQyxDQUFFLENBQUM7UUFDakUsb0NBQXVCLENBQUMsSUFBSSxFQUFFLFVBQVUsRUFBRSxnQkFBZ0IsRUFBRSxlQUFlLENBQUMsQ0FBQztJQUMvRSxDQUFDLENBQUEsQ0FBQztBQUNKLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKipcbiAqIEBsaWNlbnNlXG4gKiBDb3B5cmlnaHQgR29vZ2xlIExMQyBBbGwgUmlnaHRzIFJlc2VydmVkLlxuICpcbiAqIFVzZSBvZiB0aGlzIHNvdXJjZSBjb2RlIGlzIGdvdmVybmVkIGJ5IGFuIE1JVC1zdHlsZSBsaWNlbnNlIHRoYXQgY2FuIGJlXG4gKiBmb3VuZCBpbiB0aGUgTElDRU5TRSBmaWxlIGF0IGh0dHBzOi8vYW5ndWxhci5pby9saWNlbnNlXG4gKi9cblxuaW1wb3J0IHsgY2hhaW4sIG5vb3AsIFJ1bGUsIFRyZWUgfSBmcm9tICdAYW5ndWxhci1kZXZraXQvc2NoZW1hdGljcyc7XG5pbXBvcnQgeyBhZGRNb2R1bGVJbXBvcnRUb01vZHVsZSwgYnVpbGRDb21wb25lbnQsIGZpbmRNb2R1bGVGcm9tT3B0aW9ucyB9IGZyb20gJ0Bhbmd1bGFyL2Nkay9zY2hlbWF0aWNzJztcbmltcG9ydCB7IFNjaGVtYSB9IGZyb20gJy4vc2NoZW1hJztcblxuLyoqXG4gKiBTY2FmZm9sZHMgYSBuZXcgdGFibGUgY29tcG9uZW50LlxuICogSW50ZXJuYWxseSBpdCBib290c3RyYXBzIHRoZSBiYXNlIGNvbXBvbmVudCBzY2hlbWF0aWNcbiAqL1xuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24ob3B0aW9uczogU2NoZW1hKTogUnVsZSB7XG4gIHJldHVybiBjaGFpbihbXG4gICAgYnVpbGRDb21wb25lbnQoey4uLm9wdGlvbnN9LCB7XG4gICAgICB0ZW1wbGF0ZTogJy4vX19wYXRoX18vX19uYW1lQGRhc2hlcml6ZUBpZi1mbGF0X18vX19uYW1lQGRhc2hlcml6ZV9fLmNvbXBvbmVudC5odG1sLnRlbXBsYXRlJyxcbiAgICAgIHN0eWxlc2hlZXQ6XG4gICAgICAgICAgJy4vX19wYXRoX18vX19uYW1lQGRhc2hlcml6ZUBpZi1mbGF0X18vX19uYW1lQGRhc2hlcml6ZV9fLmNvbXBvbmVudC5fX3N0eWxlX18udGVtcGxhdGUnXG4gICAgfSksXG4gICAgb3B0aW9ucy5za2lwSW1wb3J0ID8gbm9vcCgpIDogYWRkVGFibGVNb2R1bGVzVG9Nb2R1bGUob3B0aW9ucylcbiAgXSk7XG59XG5cbi8qKlxuICogQWRkcyB0aGUgcmVxdWlyZWQgbW9kdWxlcyB0byB0aGUgcmVsYXRpdmUgbW9kdWxlLlxuICovXG5mdW5jdGlvbiBhZGRUYWJsZU1vZHVsZXNUb01vZHVsZShvcHRpb25zOiBTY2hlbWEpIHtcbiAgcmV0dXJuIGFzeW5jIChob3N0OiBUcmVlKSA9PiB7XG4gICAgY29uc3QgbW9kdWxlUGF0aCA9IChhd2FpdCBmaW5kTW9kdWxlRnJvbU9wdGlvbnMoaG9zdCwgb3B0aW9ucykpITtcbiAgICBhZGRNb2R1bGVJbXBvcnRUb01vZHVsZShob3N0LCBtb2R1bGVQYXRoLCAnUGJsTmdyaWRNb2R1bGUnLCAnQHBlYnVsYS9uZ3JpZCcpO1xuICB9O1xufVxuIl19

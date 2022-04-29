@@ -1,0 +1,10 @@
+{
+  "name": "@pebula/ngrid/drag",
+  "main": "../bundles/pebula-ngrid-drag.umd.js",
+  "module": "../fesm2015/pebula-ngrid-drag.js",
+  "es2015": "../fesm2015/pebula-ngrid-drag.js",
+  "esm2015": "../esm2015/drag/pebula-ngrid-drag.js",
+  "fesm2015": "../fesm2015/pebula-ngrid-drag.js",
+  "typings": "pebula-ngrid-drag.d.ts",
+  "sideEffects": false
+}
